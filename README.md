@@ -120,8 +120,21 @@ Die Ansicht gilt für die Nordhalbkugel: zunehmend ist rechts beleuchtet.
 - **Innentemperatur**: ein BME280 am I²C-Port ergänzt die rechte Spalte.
 - **Südhalbkugel**: `drawMoon()` zeichnet fest für den Norden. Ein Spiegeln
   anhand des Breitengrads aus `config.h` wären wenige Zeilen.
-- **Gehäuse**: Das Board hat Befestigungslöcher – ein schräger Ständer mit
-  Kabelführung nach hinten ist ein dankbarer Druck.
+
+## Gehäuse
+
+Die druckbaren Teile (Rahmen für USB links oder rechts, Deckel, Ständer) liegen
+nicht in diesem Repo, sondern auf MakerWorld. Dort steht auch die Lizenz für das
+Modell – sie ist von der Lizenz der Firmware unabhängig.
+
+## Lizenz
+
+Firmware und Dokumentation stehen unter der MIT-Lizenz, siehe [LICENSE](LICENSE).
+
+`include/lv_conf.h` ist eine angepasste Kopie von `lv_conf_template.h` aus LVGL
+und damit ebenfalls MIT. Die übrigen Bibliotheken (LVGL, LilyGo-AMOLED-Series,
+ArduinoJson – alle MIT) lädt PlatformIO beim Bauen nach `.pio/` und sind nicht
+Teil dieses Repos.
 
 ---
 
@@ -246,5 +259,18 @@ northern hemisphere: waxing is lit on the right.
 - **Indoor temperature**: a BME280 on the I²C port rounds out the right column.
 - **Southern hemisphere**: `drawMoon()` is hard-wired for the north. Mirroring
   it based on the latitude from `config.h` would take a few lines.
-- **Enclosure**: the board has mounting holes – an angled stand with cable
-  routing out the back is a rewarding print.
+
+## Enclosure
+
+The printable parts (frame for USB on the left or right, lid, stand) are not in
+this repository but on MakerWorld. The licence for the model is stated there and
+is independent of the firmware licence.
+
+## Licence
+
+Firmware and documentation are under the MIT licence, see [LICENSE](LICENSE).
+
+`include/lv_conf.h` is a modified copy of LVGL's `lv_conf_template.h` and is
+therefore MIT as well. The remaining libraries (LVGL, LilyGo-AMOLED-Series,
+ArduinoJson – all MIT) are fetched into `.pio/` by PlatformIO at build time and
+are not part of this repository.
