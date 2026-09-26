@@ -124,8 +124,12 @@ Die Ansicht gilt für die Nordhalbkugel: zunehmend ist rechts beleuchtet.
 ## Gehäuse
 
 Die druckbaren Teile (Rahmen für USB links oder rechts, Deckel, Ständer) liegen
-nicht in diesem Repo, sondern auf MakerWorld. Dort steht auch die Lizenz für das
-Modell – sie ist von der Lizenz der Firmware unabhängig.
+nicht in diesem Repo, sondern auf MakerWorld:
+
+**[Case w/ Stand for LilyGo T-Display-S3 AMOLED 1.91](https://makerworld.com/de/models/3358380-case-w-stand-for-lilygo-t-display-s3-amoled-1-91)**
+
+Dort steht auch die Lizenz für das Modell – sie ist von der Lizenz der Firmware
+unabhängig.
 
 ## Lizenz
 
@@ -263,8 +267,12 @@ northern hemisphere: waxing is lit on the right.
 ## Enclosure
 
 The printable parts (frame for USB on the left or right, lid, stand) are not in
-this repository but on MakerWorld. The licence for the model is stated there and
-is independent of the firmware licence.
+this repository but on MakerWorld:
+
+**[Case w/ Stand for LilyGo T-Display-S3 AMOLED 1.91](https://makerworld.com/en/models/3358380-case-w-stand-for-lilygo-t-display-s3-amoled-1-91)**
+
+The licence for the model is stated there and is independent of the firmware
+licence.
 
 ## Licence
 
