@@ -197,6 +197,33 @@ official LilyGo library.
 4. **Flash** – connect the board over USB-C and hit `Upload`. If the port does
    not show up: hold BOOT, tap RESET, release.
 
+## Display language
+
+The on-screen texts are German; this README is the only bilingual part. There is
+no build option for it, so switching the display to English means editing string
+literals in `src/main.cpp`. No font work is needed – the custom Montserrat cuts
+in `src/fonts/` already cover Latin-1, and plain English needs nothing beyond
+ASCII.
+
+| Where | What to change |
+|---|---|
+| `WEEKDAYS[]`, line 90 | seven abbreviations, `So` … `Sa`. The index is `tm_wday`, so the list starts on Sunday: `"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"` |
+| `MONTHS[]`, lines 91–92 | twelve full month names, indexed by `tm_mon`, starting with January |
+| `decodeWeather()`, lines 125–159 | 22 `return` strings, one per WMO weather code group – `"Klar"` → `"Clear"`, `"Teils bewölkt"` → `"Partly cloudy"` and so on. The `default` case returns `"Keine Daten"` (`"No data"`) |
+| Date format, line 490 | `"%s, %d. %s"` – the dot after the day is German ordinal style. English wants `"%s, %d %s"` for `Wed, 22 September`, or `"%s, %s %d"` (and the arguments swapped) for `Wed, September 22` |
+| Line 531 | `"Keine Verbindung"` → `"No connection"`, shown in the condition label when no weather data has arrived yet |
+| Line 546 | `"Gefühlt %.0f…"` → `"Feels like %.0f…"`. Keep the escape sequences: `\xC2\xB0` is `°` and `\xE2\x80\xA2` is the `•` separator; `%%` prints a literal percent sign |
+
+The line numbers refer to the current state of the file and will drift as it
+changes – search for the identifiers instead if they no longer match. `offline`
+in the Wi-Fi line is already English.
+
+One thing to check on the panel afterwards: the date label starts at x=24 and the
+temperature column begins at x=348, and the layout is absolutely positioned with
+no reflow. English weekday abbreviations are a character longer than the German
+ones, so look at a long combination such as `Wed, 22 September` to make sure it
+does not run into the weather column.
+
 ## Troubleshooting
 
 - **Text has a blue-green-purple tint**: `LV_COLOR_16_SWAP` is set to `0`. Pure
